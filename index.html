@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Page Title</title>
+  <style>
+    body {
+      font-size: 50px; 
+    }
+  </style>
+</head>
+
+
+<h1>Apple watch search</h1>
+<p>This is some search thing thats useless</p>
+<form id="myForm">
+  <label for="myInput">Search something:</label>
+  <input type="text" id="myInput" name="query"><br><br>
+  <input type="button" value="Search" onclick="searchGoogle()">
+</form>
+
+<script>
+  function searchGoogle() {
+    const form = document.getElementById('myForm');
+    const formData = new FormData(form);
+    const query = formData.get('query');
+    const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    window.location.href = url;
+  }
+</script>
+
+<p id="demo"></p>
+
+<script>
+
+
+</script>
+
+
+</body>
+</html>
